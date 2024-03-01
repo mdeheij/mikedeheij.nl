@@ -1,6 +1,6 @@
 # My personal website
 
-## Building
+## Building from HTML
 
 ```sh
 kubectl create configmap homepage-files --dry-run=client  --from-file ./index.html -o yaml | kubectl-neat > content.yaml
