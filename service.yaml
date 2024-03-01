@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mikedeheij-website
+spec:
+  ports:
+  - name: http
+    port: 80
+  selector:
+    app: mikedeheij-website

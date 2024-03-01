@@ -1,0 +1,16 @@
+apiVersion: v1
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <title>Mike de Heij</title>
+    <body>
+    <h1>Mike de Heij</h1>
+    <blockquote>
+    <p>Software / DevOps Engineer</p>
+    </blockquote>
+    </body>
+    </html>
+kind: ConfigMap
+metadata:
+  name: mikedeheij-website

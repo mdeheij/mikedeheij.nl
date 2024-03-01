@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($host = 'www.mikedeheij.nl' ) {
+        rewrite ^ https://mikedeheij.nl$request_uri redirect;
+      }
+  name: mikedeheij.nl
+spec:
+  rules:
+  - host: mikedeheij.nl
+    http: &http
+      paths:
+      - backend:
+          service:
+            name: mikedeheij-website
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  - host: www.mikedeheij.nl
+    http: *http
+  tls:
+  - hosts:
+    - mikedeheij.nl
+    - www.mikedeheij.nl
+    secretName: mikedeheij.nl
