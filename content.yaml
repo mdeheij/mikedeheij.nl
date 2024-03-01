@@ -1,4 +1,7 @@
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mikedeheij-website
 data:
   index.html: |
     <!DOCTYPE html>
@@ -8,10 +11,6 @@ data:
     <h1>Mike de Heij</h1>
     <blockquote>
     <p>Software / DevOps Engineer</p>
-    <p><a href="https://github.com/mdeheij/mikedeheij.nl">Source code</a></p>
     </blockquote>
     </body>
     </html>
-kind: ConfigMap
-metadata:
-  name: mikedeheij-website
